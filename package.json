@@ -1,0 +1,73 @@
+{
+    "name":  "dsh-settings-nav-order",
+    "version":  "1.0.0",
+    "description":  "Reorder the DeepSeek Harness settings panel nav by long-pressing and dragging a section. Order is saved to the plugin\u0027s own folder; nothing is written to settings.yaml, and uninstalling restores the original order.",
+    "type":  "module",
+    "main":  "lib/index.js",
+    "exports":  {
+                    ".":  {
+                              "default":  "./lib/index.js"
+                          },
+                    "./client":  {
+                                     "default":  "./lib/client.js"
+                                 },
+                    "./package.json":  "./package.json"
+                },
+    "dsh":  {
+                "bundle":  {
+                               "patch":  "./cordis.patch.yml"
+                           },
+                "client":  {
+                               "platform":  "web",
+                               "inject":  [
+                                              "@deepseek-ai/dsh-client-ui-renderer"
+                                          ],
+                               "immediately":  true
+                           },
+                "catalog":  {
+                                "category":  "ui",
+                                "summary":  {
+                                                "en":  "Reorder the settings panel nav by long-pressing and dragging a section; order is saved in the plugin\u0027s own folder and restored on uninstall.",
+                                                "zh":  "长按拖动即可重排设置面板左侧大项；顺序保存在插件自己的目录，卸载后自动恢复原序。"
+                                            },
+                                "capabilities":  [
+
+                                                 ]
+                            }
+            },
+    "files":  [
+                  "lib/",
+                  "assets/",
+                  "cordis.patch.yml",
+                  "README.md",
+                  "README.en.md",
+                  "LICENSE"
+              ],
+    "keywords":  [
+                     "dsh",
+                     "dsh-plugin",
+                     "deepseek-harness",
+                     "settings",
+                     "nav",
+                     "sidebar",
+                     "order",
+                     "sort",
+                     "drag",
+                     "ui"
+                 ],
+    "peerDependencies":  {
+                             "@deepseek-ai/cordis":  "\u003e=4.0.1 \u003c5"
+                         },
+    "engines":  {
+                    "node":  "^22.19.0 || \u003e=24.0.0"
+                },
+    "license":  "MIT",
+    "repository":  {
+                       "type":  "git",
+                       "url":  "git+https://github.com/Saretheya/dsh-settings-nav-order.git"
+                   },
+    "homepage":  "https://github.com/Saretheya/dsh-settings-nav-order#readme",
+    "bugs":  {
+                 "url":  "https://github.com/Saretheya/dsh-settings-nav-order/issues"
+             }
+}
